@@ -1,0 +1,102 @@
+<!--
+Licensed Materials - Property of IBM 
+IBM Cognos Products: RS 
+(c) Copyright IBM Corp. 2013 
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+-->
+<chartTypeDefinition name="vis.sample.bullet.col.ryg" adapter="com.ibm.cognos.adapters.rave.RAVEChartAdapter" definitionVersion="1" adapterVersion="1" xmlns="http://www.ibm.com/xmlns/prod/ba/visBundle/chartTypeDefinition.1/">
+	<label ids="lblChartType"/>
+	<description ids="descChartType"/>
+	<tooltip ids="tooltipChartType"/>
+	<author>Kelly Raposo</author>
+	<tags>
+		<tag ids="tagBullet">Bullet</tag>
+	</tags>
+	<dataSets>
+		<dataSet name='dataSet' hasChartElements='true' optionalOverride='true'>
+			<label ids='lblDataSet'/>
+			<description ids='descDataSet'/>
+			<tooltip ids='tooltipDataSet'/>
+			<categoryEdges>
+				<categoryEdge name='categoriesEdge'>
+					<categoryLevels>
+						<categoryLevel>
+							<categoryFields>
+								<categoryField name='categories' categoryValues='indexedFull'>
+									<label ids='lblCategories'/>
+									<description ids='descCategories'/>
+									<tooltip ids='tooltipCategories'/>
+								</categoryField>
+							</categoryFields>
+						</categoryLevel>
+					</categoryLevels>
+				</categoryEdge>
+			</categoryEdges>
+			<valuesEdge>
+				<valueFields>
+					<valueField name='size' supportsRange='true'>
+						<label ids='lblSize'/>
+						<description ids='descSize'/>
+						<tooltip ids='tooltipSize'/>
+					</valueField>
+					<valueField name='target' supportsRange='true'>
+						<label ids='lblTarget'/>
+						<description ids='descTarget'/>
+						<tooltip ids='tooltipTarget'/>
+					</valueField>
+					<valueField name='satisfactory' supportsRange='true'>
+						<label ids='lblSatisfactory'/>
+						<description ids='descSatisfactory'/>
+						<tooltip ids='tooltipSatisfactory'/>
+					</valueField>
+					<valueField name='good' supportsRange='true'>
+						<label ids='lblGood'/>
+						<description ids='descGood'/>
+						<tooltip ids='tooltipGood'/>
+					</valueField>
+				</valueFields>
+			</valuesEdge>
+			<instanceTable>
+				<categoryFieldInstance refField='categories'/>
+				<valueFieldInstance refField='size'/>
+				<valueFieldInstance refField='target'/>
+				<valueFieldInstance refField='satisfactory'/>
+				<valueFieldInstance refField='good'/>
+			</instanceTable>
+		</dataSet>
+	</dataSets>
+	<properties>
+		<enumProperty name="animationEffect" default="none" outputType="javascript">
+			<label ids="lblAnimationEffect"/>
+			<description ids="viz_animationEffect"/>
+			<enumValues>
+				<enumValue value="none">
+					<label ids="lblAnimationNone"/>
+				</enumValue>
+				<enumValue value="transition">
+					<label ids="lblAnimationTransition"/>
+				</enumValue>
+				<enumValue value="fadeIn">
+					<label ids="lblAnimationFadeIn"/>
+				</enumValue>
+				<enumValue value="flyIn">
+					<label ids="lblAnimationFlyin"/>
+				</enumValue>
+				<enumValue value="grow">
+					<label ids="lblAnimationGrow"/>
+				</enumValue>
+				<enumValue value="reveal">
+					<label ids="lblAnimationReveal"/>
+				</enumValue>
+			</enumValues>
+		</enumProperty>
+		<integerProperty name="width" default="500">
+			<label ids="lblWidth"/>
+			<description ids="viz_width"/>
+		</integerProperty>
+		<integerProperty name="height" default="500">
+			<label ids="lblHeight"/>
+			<description ids="viz_height"/>
+		</integerProperty>
+	</properties>
+</chartTypeDefinition>

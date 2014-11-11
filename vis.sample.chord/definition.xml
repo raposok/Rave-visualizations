@@ -1,0 +1,98 @@
+<!--
+Licensed Materials - Property of IBM 
+IBM Cognos Products: RS 
+(c) Copyright IBM Corp. 2013 
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+-->
+<chartTypeDefinition name="vis.sample.chord" adapter="com.ibm.cognos.adapters.rave.RAVEChartAdapter" definitionVersion="1" adapterVersion="1" xmlns="http://www.ibm.com/xmlns/prod/ba/visBundle/chartTypeDefinition.1/">
+	<label ids="lblChartType"/>
+	<description ids="descChartType"/>
+	<tooltip ids="tooltipChartType"/>
+	<author>Kelly Raposo</author>
+	<tags>
+		<tag ids="tagChord">Chord</tag>
+	</tags>
+	<dataSets>
+		<dataSet name='data' hasChartElements='true' optionalOverride='true'>
+			<label ids='lblData'/>
+			<description ids='descData'/>
+			<tooltip ids='tooltipData'/>
+			<categoryEdges>
+				<categoryEdge name='GroupAEdge'>
+					<categoryLevels>
+						<categoryLevel>
+							<categoryFields>
+								<categoryField name='GroupA' categoryValues='indexedFull'>
+									<label ids='lblGroupA'/>
+									<description ids='descGroupA'/>
+									<tooltip ids='tooltipGroupA'/>
+								</categoryField>
+							</categoryFields>
+						</categoryLevel>
+					</categoryLevels>
+				</categoryEdge>
+				<categoryEdge name='GroupBEdge'>
+					<categoryLevels>
+						<categoryLevel>
+							<categoryFields>
+								<categoryField name='GroupB' categoryValues='indexedFull'>
+									<label ids='lblGroupB'/>
+									<description ids='descGroupB'/>
+									<tooltip ids='tooltipGroupB'/>
+								</categoryField>
+							</categoryFields>
+						</categoryLevel>
+					</categoryLevels>
+				</categoryEdge>
+			</categoryEdges>
+			<valuesEdge>
+				<valueFields>
+					<valueField name='Measure' supportsRange='true'>
+						<label ids='lblMeasure'/>
+						<description ids='descMeasure'/>
+						<tooltip ids='tooltipMeasure'/>
+					</valueField>
+				</valueFields>
+			</valuesEdge>
+			<instanceTable>
+				<categoryFieldInstance refField='GroupA'/>
+				<categoryFieldInstance refField='GroupB'/>
+				<valueFieldInstance refField='Measure'/>
+			</instanceTable>
+		</dataSet>
+	</dataSets>
+	<properties>
+		<enumProperty name="animationEffect" default="none" outputType="javascript">
+			<label ids="lblAnimationEffect"/>
+			<description ids="viz_animationEffect"/>
+			<enumValues>
+				<enumValue value="none">
+					<label ids="lblAnimationNone"/>
+				</enumValue>
+				<enumValue value="transition">
+					<label ids="lblAnimationTransition"/>
+				</enumValue>
+				<enumValue value="fadeIn">
+					<label ids="lblAnimationFadeIn"/>
+				</enumValue>
+				<enumValue value="flyIn">
+					<label ids="lblAnimationFlyin"/>
+				</enumValue>
+				<enumValue value="grow">
+					<label ids="lblAnimationGrow"/>
+				</enumValue>
+				<enumValue value="reveal">
+					<label ids="lblAnimationReveal"/>
+				</enumValue>
+			</enumValues>
+		</enumProperty>
+		<integerProperty name="width" default="500">
+			<label ids="lblWidth"/>
+			<description ids="viz_width"/>
+		</integerProperty>
+		<integerProperty name="height" default="500">
+			<label ids="lblHeight"/>
+			<description ids="viz_height"/>
+		</integerProperty>
+	</properties>
+</chartTypeDefinition>
